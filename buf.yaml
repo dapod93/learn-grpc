@@ -2,7 +2,7 @@
 version: v2
 
 modules:
-  - path: .
+  - path: proto
 
 deps:
   - buf.build/bufbuild/protovalidate
