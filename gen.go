@@ -1,4 +1,4 @@
-package vprotocore
+package main
 
 //go:generate buf format -w
 //go:generate buf generate
