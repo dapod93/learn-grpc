@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package user.v1.message.v1;
+
+import "buf/validate/validate.proto";
+
+option go_package = "github.com/dapod93/learn-grpc/proto/user/v1/message/v1;usermv1";
+
+message GetUserByFilterResponse {
+  string message = 1;
+}
