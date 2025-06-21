@@ -1,61 +1,71 @@
-INSERT INTO users (id, first_name, last_name, email)
+INSERT INTO users (id, first_name, last_name, email, created_at)
 VALUES (
         1,
         'Alice',
         'Johnson',
-        'alice.johnson@example.com'
+        'alice.johnson@example.com',
+        CURRENT_TIMESTAMP
     ),
     (
         2,
         'Bob',
         'Smith',
-        'bob.smith@example.com'
+        'bob.smith@example.com',
+        CURRENT_TIMESTAMP
     ),
     (
         3,
         'Charlie',
         'Williams',
-        'charlie.williams@example.com'
+        'charlie.williams@example.com',
+        CURRENT_TIMESTAMP
     ),
     (
         4,
         'Diana',
         'Brown',
-        'diana.brown@example.com'
+        'diana.brown@example.com',
+        CURRENT_TIMESTAMP
     ),
     (
         5,
         'Ethan',
         'Jones',
-        'ethan.jones@example.com'
+        'ethan.jones@example.com',
+        CURRENT_TIMESTAMP
     ),
     (
         6,
         'Fiona',
         'Garcia',
-        'fiona.garcia@example.com'
+        'fiona.garcia@example.com',
+        CURRENT_TIMESTAMP
     ),
     (
         7,
         'George',
         'Martinez',
-        'george.martinez@example.com'
+        'george.martinez@example.com',
+        CURRENT_TIMESTAMP
     ),
     (
         8,
         'Hannah',
         'Lee',
-        'hannah.lee@example.com'
+        'hannah.lee@example.com',
+        CURRENT_TIMESTAMP
     ),
     (
         9,
         'Ivan',
         'Walker',
-        'ivan.walker@example.com'
+        'ivan.walker@example.com',
+        CURRENT_TIMESTAMP
     ),
     (
         10,
         'Julia',
         'Hall',
-        'julia.hall@example.com'
+        'julia.hall@example.com',
+        CURRENT_TIMESTAMP
     );
