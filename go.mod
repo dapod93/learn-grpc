@@ -5,6 +5,7 @@ go 1.24.3
 require (
 	buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go v1.36.6-20250613105001-9f2d3c737feb.1
 	buf.build/go/protovalidate v0.13.1
+	entgo.io/ent v0.14.4
 	github.com/rs/zerolog v1.34.0
 	google.golang.org/grpc v1.73.0
 	google.golang.org/protobuf v1.36.6
