@@ -24,8 +24,8 @@ const (
 
 type GetUserByFilterRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Email         string                 `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
+	Id            *int64                 `protobuf:"varint,1,opt,name=id,proto3,oneof" json:"id,omitempty"`
+	Email         *string                `protobuf:"bytes,2,opt,name=email,proto3,oneof" json:"email,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -61,15 +61,15 @@ func (*GetUserByFilterRequest) Descriptor() ([]byte, []int) {
 }
 
 func (x *GetUserByFilterRequest) GetId() int64 {
-	if x != nil {
-		return x.Id
+	if x != nil && x.Id != nil {
+		return *x.Id
 	}
 	return 0
 }
 
 func (x *GetUserByFilterRequest) GetEmail() string {
-	if x != nil {
-		return x.Email
+	if x != nil && x.Email != nil {
+		return *x.Email
 	}
 	return ""
 }
@@ -78,10 +78,12 @@ var File_user_v1_message_v1_request_proto protoreflect.FileDescriptor
 
 const file_user_v1_message_v1_request_proto_rawDesc = "" +
 	"\n" +
-	" user/v1/message/v1/request.proto\x12\x12user.v1.message.v1\x1a\x1bbuf/validate/validate.proto\"G\n" +
-	"\x16GetUserByFilterRequest\x12\x17\n" +
-	"\x02id\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\x02id\x12\x14\n" +
-	"\x05email\x18\x02 \x01(\tR\x05emailBDZBgithub.com/dapod93/learn-grpc/proto/gen/user/v1/message/v1;usermv1b\x06proto3"
+	" user/v1/message/v1/request.proto\x12\x12user.v1.message.v1\x1a\x1bbuf/validate/validate.proto\"b\n" +
+	"\x16GetUserByFilterRequest\x12\x1c\n" +
+	"\x02id\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02 \x00H\x00R\x02id\x88\x01\x01\x12\x19\n" +
+	"\x05email\x18\x02 \x01(\tH\x01R\x05email\x88\x01\x01B\x05\n" +
+	"\x03_idB\b\n" +
+	"\x06_emailBDZBgithub.com/dapod93/learn-grpc/proto/gen/user/v1/message/v1;usermv1b\x06proto3"
 
 var (
 	file_user_v1_message_v1_request_proto_rawDescOnce sync.Once
@@ -112,6 +114,7 @@ func file_user_v1_message_v1_request_proto_init() {
 	if File_user_v1_message_v1_request_proto != nil {
 		return
 	}
+	file_user_v1_message_v1_request_proto_msgTypes[0].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
