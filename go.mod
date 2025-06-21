@@ -7,6 +7,7 @@ require (
 	buf.build/go/protovalidate v0.13.1
 	entgo.io/ent v0.14.4
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.3.2
+	github.com/jinzhu/copier v0.4.0
 	github.com/joho/godotenv v1.5.1
 	github.com/mattn/go-sqlite3 v1.14.16
 	github.com/rs/zerolog v1.34.0

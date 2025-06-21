@@ -6,5 +6,5 @@ import (
 )
 
 type UserRepo interface {
-	GetUserByFilter(f filter.User) *entity.User
+	GetByFilter(f filter.User) *entity.User
 }
