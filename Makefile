@@ -10,8 +10,17 @@ atlas-downgrade: ## Run atlas upgrade script
 atlas-upgrade: ## Run atlas upgrade script
 	atlas migrate apply --dir "file://database/ent/migrate/migrations" --url 'sqlite://learn-grpc.db?_fk=1' 1
 
-new-ent-schema: # Create new ent db schema
+install-cli-helpers: ## Install clis
+	curl -sSf https://atlasgo.sh | sh && \
+	go install github.com/bufbuild/buf/cmd/buf@v1.55.1 && \
+	go install github.com/air-verse/air@latest && \
+	go install entgo.io/ent/cmd/ent@latest
+
+new-ent-schema: ## Create new ent db schema
 	ent new --target database/ent/schema $(name)
 
-rehash-ent-migrations:
+rehash-ent-migrations: ## Rehase atlas.sum
 	atlas migrate hash --dir "file://database/ent/migrate/migrations"
+
+serve: ## Serve the server
+	air --build.cmd "go build -o ./bin/app main.go" --build.bin "./bin/app"
