@@ -7,6 +7,8 @@ import (
 	"github.com/dapod93/learn-grpc/common/util"
 	"github.com/dapod93/learn-grpc/src/user/adapter/uow"
 	"github.com/dapod93/learn-grpc/src/user/service"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
 
 	usermv1 "github.com/dapod93/learn-grpc/proto/gen/user/v1/message/v1"
 )
@@ -17,10 +19,10 @@ func (ctrl *userGrpcController) GetUserByFilter(
 ) (resp *usermv1.GetUserByFilterResponse, err error) {
 	user := service.GetUserByFilter(
 		uow.NewUser(ctx),
-		filter.User{ID: util.GetPointer(int(util.GetDerefPointer(req.Id))), Email: req.Email},
+		filter.User{ID: util.GetNilPointer(int(util.GetDerefPointer(req.Id))), Email: req.Email},
 	)
 	if user == nil {
-		return nil, nil
+		return nil, status.Error(codes.NotFound, "User not found")
 	}
 
 	return &usermv1.GetUserByFilterResponse{
